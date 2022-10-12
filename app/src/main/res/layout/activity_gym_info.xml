@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.GymInfoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relGymInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="340dp"
+                    android:background="@drawable/gyminfoplace"
+                    android:tag="image_tag" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="340dp"
+                    android:background="@drawable/shadowimage"
+                    android:tag="image_tag" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relGymName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:layout_below="@+id/relGymInfo"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/textViewVersion"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/companylogo" />
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:textSize="25dp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/worksansbold"
+                    android:layout_toLeftOf="@+id/textViewVersion"
+                    android:text="Gold's gym" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textStreetName"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_below="@+id/relGymName"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/worksansregular"
+                android:text="MMA, Crossfit, Powerlifting"
+                android:textColor="#000"
+                android:textSize="16dp" />
+
+            <RelativeLayout
+                android:id="@+id/relLocation"
+                android:layout_below="@+id/textStreetName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:id="@+id/imgLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_location"
+                    android:tag="image_tag" />
+
+                <TextView
+                    android:id="@+id/txtAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/worksansregular"
+                    android:layout_toRightOf="@+id/imgLocation"
+                    android:text="489 Al Bridge Apt. 307"
+                    android:textSize="13dp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llLine1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/relLocation"
+                android:background="#DAE4EE"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:fontFamily="@font/worksansregular"
+                android:layout_toRightOf="@+id/imgLocation"
+                android:text="It's where greatness lives. It's where legacies are built. And they're built every single day with the best weight &amp; strength training, classes, ..."
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:id="@+id/llLine2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/relLocation"
+                android:background="#DAE4EE"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:fontFamily="@font/worksansmedium"
+                android:layout_toRightOf="@+id/imgLocation"
+                android:text="Amenties"
+                android:textSize="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyGymTagList"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
