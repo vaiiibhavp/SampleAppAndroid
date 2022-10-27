@@ -25,8 +25,8 @@ class StepCallService : Service() {
     override fun onCreate() {
         Log.d(TAG, "onCreate")
 
-        val delay = GregorianCalendar().getTimeInMillis()+24*3600000 // delay for 1 day.
-        val period = GregorianCalendar().getTimeInMillis()+24*3600000 // repeat 1 day.
+        val delay = 86400000 // delay for 1 day.
+        val period = 86400000 // repeat 1 day.
 //        val delay = 5000 // delay for 5 sec.
 //        val period = 5000 // repeat every sec.
         timer = Timer()
@@ -41,15 +41,14 @@ class StepCallService : Service() {
                 }
 
             }
-        }.also { task = it }, delay.toLong(), period.toLong())
+        }.also { task = it }, 0, period.toLong())
     }
 
-    override fun stopService(name: Intent): Boolean {
-        // TODO Auto-generated method stub
-        timer!!.cancel()
-        task!!.cancel()
-        return super.stopService(name)
-    }
+//    override fun stopService(name: Intent): Boolean {
+//        timer!!.cancel()
+//        task!!.cancel()
+//        return super.stopService(name)
+//    }
 
     companion object {
         private const val TAG = "AutoService"

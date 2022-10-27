@@ -217,6 +217,7 @@ class MainActivity : ComponentActivity(), GymListAdapter.onClickListener {
         startService(StepsIntent)
         val stepCallService = Intent(applicationContext, StepCallService::class.java)
         startService(stepCallService)
+
         update()
     }
 
